@@ -211,23 +211,25 @@ class Ui_MainWindow(object):
                 self.tableWidget_2.setItem(i,ib,item)
 
     def generate(self):
-        data = []
-        hash_map = []
-        for row in range(self.tableWidget_2.rowCount()):
-            data.append([])
-            for column in range(self.tableWidget_2.columnCount()):
-                for row2 in range(self.tableWidget.rowCount()):
-                    if self.tableWidget.item(row2, 0).text() == str(self.tableWidget_2.item(row,column).text()):
-                        data[row].append(row2)
-        for row2 in range(self.tableWidget.rowCount()):
-            dict_ = dict()[row2] = self.tableWidget.item(row2, 0).text()
-            hash_map.append(dict_)
-        a = {"hashmap": hash_map, "type": 1, "name": "some", "author": "someone behind the screen", "version": "b1",
-             "map": data}
-        import json
-        json_ = json.dumps(a)
-        self.textBrowser.setText(json_)
-
+        try:
+            data = []
+            hash_map = []
+            for row in range(self.tableWidget_2.rowCount()):
+                data.append([])
+                for column in range(self.tableWidget_2.columnCount()):
+                    for row2 in range(self.tableWidget.rowCount()):
+                        if self.tableWidget.item(row2, 0).text() == self.tableWidget_2.item(row,column).text():
+                            data[row].append(row2)
+            for row2 in range(self.tableWidget.rowCount()):
+                dict_ = dict()[row2] = self.tableWidget.item(row2, 0).text()
+                hash_map.append(dict_)
+            a = {"hashmap": hash_map, "type": 1, "name": "some", "author": "someone behind the screen", "version": "b1",
+                 "map": data}
+            import json
+            json_ = json.dumps(a)
+            self.textBrowser.setText(json_)
+        except Exception as e:
+            self.textBrowser.setText("发生了一个错误！　请检查是否有留空")
     def paintText(self,a):
         self.paintTextTx = a.text()
         self.paintTextNum = a.row()+1
@@ -271,6 +273,7 @@ class Ui_MainWindow(object):
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
         self.dockWidget_5.setWindowTitle(_translate("MainWindow", "地图"))
         self.dockWidget_6.setWindowTitle(_translate("MainWindow", "结果"))
+        self.dockWidget_7.setWindowTitle(_translate("MainWindow", "操作"))
         self.dockWidget.setWindowTitle(_translate("MainWindow", "映射表"))
         self.menu.setTitle(_translate("MainWindow", "文件"))
         self.tableWidget_2.clear()
