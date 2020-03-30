@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/TextWar/TextWar/readme_image/logo.png" width=500>
+<img src="https://github.com/TextWar/TextWar/raw/master/readme_image/logo.png" width=500>
 </p>
 
 
