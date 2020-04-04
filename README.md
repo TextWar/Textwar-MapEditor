@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/TextWar/TextWar/raw/master/readme_image/logo.png" width=500>
+<img src="https://github.com/TextWar/TextWar/raw/master/readme_image/banner.png" width=500>
 </p>
 
 
@@ -24,7 +24,6 @@ This is the Map Editor of the TextWar json file.
 #### Project Dependency
 
 - PyQt5
-```
 
 #### LICENSE
 - [GPL v3](LICENSE)
