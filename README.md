@@ -28,6 +28,10 @@ This is the Map Editor of the TextWar json file.
 #### LICENSE
 - [GPL v3](LICENSE)
 
+#### RUN
+
+> python mapeditor.py
+
 #### CopyRight
 
 @CopyRight TextWar Developing Studio
